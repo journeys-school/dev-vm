@@ -8,4 +8,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "trusty64"
   config.vm.synced_folder '..', '/home/vagrant/dev'
   config.vm.provision :shell, path: 'install.sh'
+  config.vm.network "forwarded_port", guest: 4000, host: 4000
 end
